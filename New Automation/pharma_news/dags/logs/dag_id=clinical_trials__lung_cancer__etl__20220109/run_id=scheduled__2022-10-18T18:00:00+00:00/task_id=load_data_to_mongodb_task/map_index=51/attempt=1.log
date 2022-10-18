@@ -1,0 +1,1034 @@
+[2022-10-18 20:05:58,937] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_mongodb_task scheduled__2022-10-18T18:00:00+00:00 map_index=51 [queued]>
+[2022-10-18 20:05:58,949] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_mongodb_task scheduled__2022-10-18T18:00:00+00:00 map_index=51 [queued]>
+[2022-10-18 20:05:58,950] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 20:05:58,951] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-10-18 20:05:58,952] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 20:05:58,958] {taskinstance.py:1377} INFO - Executing <Mapped(_PythonDecoratedOperator): load_data_to_mongodb_task> on 2022-10-18 18:00:00+00:00
+[2022-10-18 20:05:58,963] {standard_task_runner.py:52} INFO - Started process 5111 to run task
+[2022-10-18 20:05:58,966] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'clinical_trials__lung_cancer__etl__20220109', 'load_data_to_mongodb_task', 'scheduled__2022-10-18T18:00:00+00:00', '--job-id', '649', '--raw', '--subdir', 'DAGS_FOLDER/process_news_dags.py', '--cfg-path', '/tmp/tmp4brhh4rm', '--map-index', '51', '--error-file', '/tmp/tmpi6hn74ma']
+[2022-10-18 20:05:58,967] {standard_task_runner.py:80} INFO - Job 649: Subtask load_data_to_mongodb_task
+[2022-10-18 20:05:58,978] {logging_mixin.py:115} WARNING - /root/.cache/pypoetry/virtualenvs/***-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/configuration.py:525 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-10-18 20:05:59,005] {task_command.py:370} INFO - Running <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_mongodb_task scheduled__2022-10-18T18:00:00+00:00 map_index=51 [running]> on host 6cdf6d517dc4
+[2022-10-18 20:05:59,050] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=wais@datakimia.com,david@datakimia.com,juanm@datakimia.com,tomas@datakimia.com
+AIRFLOW_CTX_DAG_OWNER=atacana
+AIRFLOW_CTX_DAG_ID=clinical_trials__lung_cancer__etl__20220109
+AIRFLOW_CTX_TASK_ID=load_data_to_mongodb_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-18T18:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-18T18:00:00+00:00
+[2022-10-18 20:05:59,052] {process_news_dag_factory.py:128} INFO - Going to load data from clinical_trials about topic RG-7446
+[2022-10-18 20:05:59,076] {db_helpers.py:35} INFO - Connected successfully!!!
+[2022-10-18 20:05:59,082] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container?restype=REDACTED&comp=REDACTED&prefix=REDACTED&delimiter=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '486a2f24-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:00,029] {_universal.py:504} INFO - Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/xml'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9a427-201e-0076-552d-e3354f000000'
+    'x-ms-client-request-id': '486a2f24-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:05:59 GMT'
+[2022-10-18 20:06:00,036] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05468359.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '48fbdaaa-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:00,220] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '730'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:37 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B4ABCED7"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9a52f-201e-0076-452d-e3354f000000'
+    'x-ms-client-request-id': '48fbdaaa-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:05:59 GMT'
+[2022-10-18 20:06:00,231] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:00,233] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:00,236] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05468359', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'Safety and Efficacy of Cyclophosphamide, Sorafenib, Bevacizumab, and Atezolizumab in Pediatric Solid Tumor Patients', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05468359?cond=RG-7446&sfpd_d=100', 'publisher': "St. Jude Children's Research Hospital", 'published_at': '2022-07-21T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:01,426] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05468489.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '49cff33a-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:01,614] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '655'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:38 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B4E59B39"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9a945-201e-0076-7e2d-e3354f000000'
+    'x-ms-client-request-id': '49cff33a-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:00 GMT'
+[2022-10-18 20:06:01,623] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:01,624] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:01,628] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05468489', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'To Evaluate Efficacy and Safety of HLX10 + Chemotherapy (Carboplatin- Etoposide) in US Patients With ES-SCLC', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05468489?cond=RG-7446&sfpd_d=100', 'publisher': 'Shanghai Henlius Biotech', 'published_at': '2022-07-21T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:01,830] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05470595.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4a0d7e94-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:02,013] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '623'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:36 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B3D95B36"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9aa86-201e-0076-282d-e3354f000000'
+    'x-ms-client-request-id': '4a0d7e94-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:01 GMT'
+[2022-10-18 20:06:02,018] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:02,020] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:02,023] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05470595', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'A Single-arm Trial of Atezolizumab/Platinum/Etoposide for the Treatment of Advanced Large-cell Neuroendocrine Cancer of the Lung', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05470595?cond=RG-7446&sfpd_d=100', 'publisher': 'Technische Universität Dresden;   Roche Pharma AG', 'published_at': '2022-07-22T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:02,224] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05483400.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4a49ad06-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:02,415] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '583'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:35 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B315B28F"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9ac09-201e-0076-122d-e3354f000000'
+    'x-ms-client-request-id': '4a49ad06-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:01 GMT'
+[2022-10-18 20:06:02,420] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:02,421] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:02,423] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05483400', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'Open Label Phase 2 Basket Trial With Atezolizumab and Tiragolumab in Solid Tumors', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05483400?cond=RG-7446&sfpd_d=100', 'publisher': 'University Medical Center Groningen', 'published_at': '2022-08-02T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:02,622] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05487235.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4a8653d2-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:02,807] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '665'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:37 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B453D094"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9ad43-201e-0076-3c2d-e3354f000000'
+    'x-ms-client-request-id': '4a8653d2-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:02 GMT'
+[2022-10-18 20:06:02,814] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:02,815] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:02,817] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05487235', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'A Study to Evaluate the Safety, Pharmacokinetics, and Activity of GDC-1971 in Combination With Atezolizumab in Participants With Locally Advanced or Metastatic Solid Tumors', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05487235?cond=RG-7446&sfpd_d=100', 'publisher': 'Genentech, Inc.', 'published_at': '2022-08-04T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:03,017] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05488522.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4ac2b610-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:03,197] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '529'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:38 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B4C87A6B"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9ae40-201e-0076-2c2d-e3354f000000'
+    'x-ms-client-request-id': '4ac2b610-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:02 GMT'
+[2022-10-18 20:06:03,203] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:03,204] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:03,207] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05488522', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'SBRT With Atezo/Bev for HCC', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05488522?cond=RG-7446&sfpd_d=100', 'publisher': 'Abramson Cancer Center of the University of Pennsylvania', 'published_at': '2022-08-04T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:03,411] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05492123.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4afebb06-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:03,597] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '640'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:38 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B5200388"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9af43-201e-0076-162d-e3354f000000'
+    'x-ms-client-request-id': '4afebb06-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:02 GMT'
+[2022-10-18 20:06:03,611] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:03,613] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:03,618] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05492123', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'Nivolumab-ipilimumab and Chemoradiation for Cervical Cancer', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05492123?cond=RG-7446&sfpd_d=100', 'publisher': 'Hospital Israelita Albert Einstein;   Bristol-Myers Squibb;   Brava', 'published_at': '2022-08-08T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:03,836] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05498896.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4b3fb66a-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:04,026] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '721'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:35 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B3515351"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9b029-201e-0076-6b2d-e3354f000000'
+    'x-ms-client-request-id': '4b3fb66a-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:03 GMT'
+[2022-10-18 20:06:04,032] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:04,033] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:04,036] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05498896', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'Investigate the Contribution of Ipatasertib to Neoadjuvant Chemotherapy Plus Atezolizumab in TNBC', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05498896?cond=RG-7446&sfpd_d=100', 'publisher': 'Queen Mary University of London;   Westdeutsche Studiengruppe GmbH (WSG);   MedSIR;   Hoffmann-La Roche', 'published_at': '2022-08-12T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:04,234] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05510427.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4b7c689e-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:04,427] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '699'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:37 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B435297E"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9b113-201e-0076-402d-e3354f000000'
+    'x-ms-client-request-id': '4b7c689e-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:03 GMT'
+[2022-10-18 20:06:04,432] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:04,433] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:04,435] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05510427', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'Phase Ib Trial of Infigratinib In Combination With Atezolizumab And Bevacizumab for The Second-Line Treatment of Advanced Cholangiocarcinoma With FGFR2 Fusion/Amplification', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05510427?cond=RG-7446&sfpd_d=100', 'publisher': 'M.D. Anderson Cancer Center;   Helsinn Healthcare', 'published_at': '2022-08-22T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:04,642] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05515627.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4bbab14e-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:04,834] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '521'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:35 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B37E021B"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9b1cb-201e-0076-6b2d-e3354f000000'
+    'x-ms-client-request-id': '4bbab14e-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:04 GMT'
+[2022-10-18 20:06:04,840] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:04,843] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:04,846] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05515627', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'Atezolizumab for Idiopathic Pulmonary Fibrosis', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05515627?cond=RG-7446&sfpd_d=100', 'publisher': 'Cedars-Sinai Medical Center;   Genentech, Inc.', 'published_at': '2022-08-25T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:05,070] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05516628.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4bfbf83e-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:05,259] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '1133'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:36 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B39C822C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9b2c9-201e-0076-4d2d-e3354f000000'
+    'x-ms-client-request-id': '4bfbf83e-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:04 GMT'
+[2022-10-18 20:06:05,268] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:05,270] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:05,273] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05516628', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'Deep, Multi-omics Phenotyping to Predict Response, Resistance and Recurrence to Adjuvant Atezolizumab Plus Bevacizumab in Resected Hepatocellular Carcinoma', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05516628?cond=RG-7446&sfpd_d=100', 'publisher': 'National Cancer Centre, Singapore;   Singapore General Hospital;   National University Hospital, Singapore;   Changi General Hospital;   Sengkang General Hospital;   Tan Tock Seng Hospital;   Singapore Clinical Research Institute;   Genome Institute of Singapore;   Institute of Molecular and Cell Biology of Singapore;   Cancer Science Institute of Singapore;   Duke-NUS Graduate Medical School;   Singapore Phenome Centre;   Nanyang Technological University;   NMRC OF-LCG (OFLCG21Jun-0016)', 'published_at': '2022-08-25T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:05,486] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05528952.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4c3b72f2-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:05,678] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '723'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:37 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B470F144"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9b3ba-201e-0076-272d-e3354f000000'
+    'x-ms-client-request-id': '4c3b72f2-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:04 GMT'
+[2022-10-18 20:06:05,683] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:05,684] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:05,686] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05528952', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'Evaluation of the Interest to Combine a CD4 Th1-inducer Cancer Vaccine Derived From Telomerase and Atezolizumab Plus Bevacizumab in Unresectable Hepatocellular Carcinoma', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05528952?cond=RG-7446&sfpd_d=100', 'publisher': 'Centre Hospitalier Universitaire de Besancon;   GERCOR - Multidisciplinary Oncology Cooperative Group', 'published_at': '2022-09-06T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:05,913] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05537402.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4c7c89d6-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:06,096] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '682'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:38 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B502E2D9"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9b4c8-201e-0076-182d-e3354f000000'
+    'x-ms-client-request-id': '4c7c89d6-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:05 GMT'
+[2022-10-18 20:06:06,101] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:06,103] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:06,105] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05537402', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'LOcoregional vs Systemic Therapy in Patients With BCLC Stage B HCC (LOST- B) Trial', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05537402?cond=RG-7446&sfpd_d=100', 'publisher': 'University of Texas Southwestern Medical Center;   Genentech, Inc.', 'published_at': '2022-09-13T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:06,310] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05538091.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4cb920f8-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:06,497] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '705'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:36 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B3BC3A84"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9b5e6-201e-0076-1c2d-e3354f000000'
+    'x-ms-client-request-id': '4cb920f8-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:05 GMT'
+[2022-10-18 20:06:06,507] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:06,508] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:06,511] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05538091', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'Vismodegib Combined With Atezolizumab in Platinum Resistant Ovarian, Fallopian Tube, and Primary Peritoneal Cancer', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05538091?cond=RG-7446&sfpd_d=100', 'publisher': 'Ronald Buckanovich;   Genentech, Inc.', 'published_at': '2022-09-13T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:06,718] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05542407.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4cf76a0c-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:06,917] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '590'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:35 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B333214A"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9b766-201e-0076-042d-e3354f000000'
+    'x-ms-client-request-id': '4cf76a0c-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:06 GMT'
+[2022-10-18 20:06:06,923] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:06,925] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:06,928] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05542407', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'ONC201 and Atezolizumab in Obesity-Driven Endometrial Cancer', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05542407?cond=RG-7446&sfpd_d=100', 'publisher': 'UNC Lineberger Comprehensive Cancer Center;   Genentech, Inc.;   Oncoceutics, Inc.', 'published_at': '2022-09-15T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:07,126] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05546879.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4d35ab78-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:07,309] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '647'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:36 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B3F6F10C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9b891-201e-0076-162d-e3354f000000'
+    'x-ms-client-request-id': '4d35ab78-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:06 GMT'
+[2022-10-18 20:06:07,316] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:07,317] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:07,320] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05546879', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'Study Investigating the Association of NP137 With Atezolizumab-Bevacizumab Combination in First Line in Unresectable Hepatocellular Carcinoma', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05546879?cond=RG-7446&sfpd_d=100', 'publisher': 'University Hospital, Grenoble;   NETRIS Pharma', 'published_at': '2022-09-21T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:07,529] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05549297.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4d730b12-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:07,731] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '598'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:38 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B53DC05B"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9b9a9-201e-0076-0f2d-e3354f000000'
+    'x-ms-client-request-id': '4d730b12-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:06 GMT'
+[2022-10-18 20:06:07,758] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:07,760] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:07,764] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05549297', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': "Tebentafusp Regimen Versus Investigator's Choice in Previously Treated Advanced Melanoma (TEBE-AM)", 'link': 'https://clinicaltrials.gov/ct2/show/NCT05549297?cond=RG-7446&sfpd_d=100', 'publisher': 'Immunocore Ltd', 'published_at': '2022-09-22T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:07,971] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05564416.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4db6a430-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:08,159] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '1022'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:36 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B414FBFB"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9baf6-201e-0076-422d-e3354f000000'
+    'x-ms-client-request-id': '4db6a430-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:07 GMT'
+[2022-10-18 20:06:08,164] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:08,165] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:08,168] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05564416', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'Testing Anti-Cancer Drugs Erdafitinib With or Without Atezolizumab in Patients With Localized Bladder Cancer Not Able to Receive Cisplatin Chemotherapy, NERA Trial', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05564416?cond=RG-7446&sfpd_d=100', 'publisher': 'National Cancer Institute (NCI)', 'published_at': '2022-10-03T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:08,367] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/rg-7446/lung-cancer_clinical-trials_20221018_rg-7446_NCT05581004.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4df306fa-4f20-11ed-8913-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:08,552] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '809'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:02:37 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143B48E11F6"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fd9bc62-201e-0076-192d-e3354f000000'
+    'x-ms-client-request-id': '4df306fa-4f20-11ed-8913-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:07 GMT'
+[2022-10-18 20:06:08,556] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:08,558] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:08,560] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05581004', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'RG-7446', 'title': 'A Study to Evaluate the Safety, Pharmacokinetics, and Activity of RO7502175 as a Single Agent and in Combination With Atezolizumab in Participants With Locally Advanced or Metastatic Solid Tumors', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05581004?cond=RG-7446&sfpd_d=100', 'publisher': 'Genentech, Inc.', 'published_at': '2022-10-14T12:00:00.000Z', 'updated_at': '2022-10-18T20:01:05.396Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:08,758] {python.py:173} INFO - Done. Returned value was: None
+[2022-10-18 20:06:08,768] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=clinical_trials__lung_cancer__etl__20220109, task_id=load_data_to_mongodb_task, map_index=51, execution_date=20221018T180000, start_date=20221018T200558, end_date=20221018T200608
+[2022-10-18 20:06:08,826] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-18 20:06:08,848] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

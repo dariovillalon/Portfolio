@@ -1,0 +1,25 @@
+[2022-10-18 22:10:06,708] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: read_conf_from_gsheets_and_update_redis.update_redis_instance scheduled__2022-10-18T22:05:00+00:00 [queued]>
+[2022-10-18 22:10:06,718] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: read_conf_from_gsheets_and_update_redis.update_redis_instance scheduled__2022-10-18T22:05:00+00:00 [queued]>
+[2022-10-18 22:10:06,735] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 22:10:06,754] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-10-18 22:10:06,755] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 22:10:06,823] {taskinstance.py:1377} INFO - Executing <Task(_PythonDecoratedOperator): update_redis_instance> on 2022-10-18 22:05:00+00:00
+[2022-10-18 22:10:06,830] {standard_task_runner.py:52} INFO - Started process 7504 to run task
+[2022-10-18 22:10:06,833] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'read_conf_from_gsheets_and_update_redis', 'update_redis_instance', 'scheduled__2022-10-18T22:05:00+00:00', '--job-id', '943', '--raw', '--subdir', 'DAGS_FOLDER/read_conf_from_gsheets_api_and_update_redis.py', '--cfg-path', '/tmp/tmp9t7mb0xf', '--error-file', '/tmp/tmpe9n434d9']
+[2022-10-18 22:10:06,847] {standard_task_runner.py:80} INFO - Job 943: Subtask update_redis_instance
+[2022-10-18 22:10:06,860] {logging_mixin.py:115} WARNING - /root/.cache/pypoetry/virtualenvs/***-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/configuration.py:525 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-10-18 22:10:06,908] {task_command.py:370} INFO - Running <TaskInstance: read_conf_from_gsheets_and_update_redis.update_redis_instance scheduled__2022-10-18T22:05:00+00:00 [running]> on host 6cdf6d517dc4
+[2022-10-18 22:10:07,020] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=wais@datakimia.com,david@datakimia.com,juanm@datakimia.com,tomas@datakimia.com
+AIRFLOW_CTX_DAG_OWNER=atacana
+AIRFLOW_CTX_DAG_ID=read_conf_from_gsheets_and_update_redis
+AIRFLOW_CTX_TASK_ID=update_redis_instance
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-18T22:05:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-18T22:05:00+00:00
+[2022-10-18 22:10:07,030] {python.py:173} INFO - Done. Returned value was: None
+[2022-10-18 22:10:07,052] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=read_conf_from_gsheets_and_update_redis, task_id=update_redis_instance, execution_date=20221018T220500, start_date=20221018T221006, end_date=20221018T221007
+[2022-10-18 22:10:07,143] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-18 22:10:07,173] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

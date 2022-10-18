@@ -1,0 +1,26 @@
+[2022-10-18 22:02:38,531] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_blob_storage_task scheduled__2022-10-18T20:00:00+00:00 map_index=40 [queued]>
+[2022-10-18 22:02:38,546] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_blob_storage_task scheduled__2022-10-18T20:00:00+00:00 map_index=40 [queued]>
+[2022-10-18 22:02:38,547] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 22:02:38,548] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-10-18 22:02:38,550] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 22:02:38,558] {taskinstance.py:1377} INFO - Executing <Mapped(_PythonDecoratedOperator): load_data_to_blob_storage_task> on 2022-10-18 20:00:00+00:00
+[2022-10-18 22:02:38,564] {standard_task_runner.py:52} INFO - Started process 6769 to run task
+[2022-10-18 22:02:38,567] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'clinical_trials__lung_cancer__etl__20220109', 'load_data_to_blob_storage_task', 'scheduled__2022-10-18T20:00:00+00:00', '--job-id', '838', '--raw', '--subdir', 'DAGS_FOLDER/process_news_dags.py', '--cfg-path', '/tmp/tmp7z3d02wz', '--map-index', '40', '--error-file', '/tmp/tmp3nrso6tg']
+[2022-10-18 22:02:38,569] {standard_task_runner.py:80} INFO - Job 838: Subtask load_data_to_blob_storage_task
+[2022-10-18 22:02:38,582] {logging_mixin.py:115} WARNING - /root/.cache/pypoetry/virtualenvs/***-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/configuration.py:525 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-10-18 22:02:38,621] {task_command.py:370} INFO - Running <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_blob_storage_task scheduled__2022-10-18T20:00:00+00:00 map_index=40 [running]> on host 6cdf6d517dc4
+[2022-10-18 22:02:38,668] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=wais@datakimia.com,david@datakimia.com,juanm@datakimia.com,tomas@datakimia.com
+AIRFLOW_CTX_DAG_OWNER=atacana
+AIRFLOW_CTX_DAG_ID=clinical_trials__lung_cancer__etl__20220109
+AIRFLOW_CTX_TASK_ID=load_data_to_blob_storage_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-18T20:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-18T20:00:00+00:00
+[2022-10-18 22:02:38,670] {process_news_dag_factory.py:105} INFO - Reading temp file: lung-cancer_clinical-trials_nsc-748726_20221018-20_df.json
+[2022-10-18 22:02:38,673] {process_news_dag_factory.py:110} INFO - No json file found for clinical_trials-NSC-748726
+[2022-10-18 22:02:38,681] {taskinstance.py:1395} INFO - Marking task as SKIPPED. dag_id=clinical_trials__lung_cancer__etl__20220109, task_id=load_data_to_blob_storage_task, map_index=40, execution_date=20221018T200000, start_date=20221018T220238, end_date=20221018T220238
+[2022-10-18 22:02:38,701] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-18 22:02:38,736] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

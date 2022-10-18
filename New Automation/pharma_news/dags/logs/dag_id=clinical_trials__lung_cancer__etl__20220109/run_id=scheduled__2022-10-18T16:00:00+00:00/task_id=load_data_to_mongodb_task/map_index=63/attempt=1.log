@@ -1,0 +1,1034 @@
+[2022-10-18 18:09:01,824] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_mongodb_task scheduled__2022-10-18T16:00:00+00:00 map_index=63 [queued]>
+[2022-10-18 18:09:01,836] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_mongodb_task scheduled__2022-10-18T16:00:00+00:00 map_index=63 [queued]>
+[2022-10-18 18:09:01,837] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 18:09:01,838] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-10-18 18:09:01,840] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 18:09:01,848] {taskinstance.py:1377} INFO - Executing <Mapped(_PythonDecoratedOperator): load_data_to_mongodb_task> on 2022-10-18 16:00:00+00:00
+[2022-10-18 18:09:01,854] {standard_task_runner.py:52} INFO - Started process 3423 to run task
+[2022-10-18 18:09:01,857] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'clinical_trials__lung_cancer__etl__20220109', 'load_data_to_mongodb_task', 'scheduled__2022-10-18T16:00:00+00:00', '--job-id', '452', '--raw', '--subdir', 'DAGS_FOLDER/process_news_dags.py', '--cfg-path', '/tmp/tmplrf7ct78', '--map-index', '63', '--error-file', '/tmp/tmp8r0djdwm']
+[2022-10-18 18:09:01,858] {standard_task_runner.py:80} INFO - Job 452: Subtask load_data_to_mongodb_task
+[2022-10-18 18:09:01,869] {logging_mixin.py:115} WARNING - /root/.cache/pypoetry/virtualenvs/***-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/configuration.py:525 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-10-18 18:09:01,901] {task_command.py:370} INFO - Running <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_mongodb_task scheduled__2022-10-18T16:00:00+00:00 map_index=63 [running]> on host 6cdf6d517dc4
+[2022-10-18 18:09:01,940] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=wais@datakimia.com,david@datakimia.com,juanm@datakimia.com,tomas@datakimia.com
+AIRFLOW_CTX_DAG_OWNER=atacana
+AIRFLOW_CTX_DAG_ID=clinical_trials__lung_cancer__etl__20220109
+AIRFLOW_CTX_TASK_ID=load_data_to_mongodb_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-18T16:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-18T16:00:00+00:00
+[2022-10-18 18:09:01,942] {process_news_dag_factory.py:128} INFO - Going to load data from clinical_trials about topic Tecentriq
+[2022-10-18 18:09:01,961] {db_helpers.py:35} INFO - Connected successfully!!!
+[2022-10-18 18:09:01,965] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container?restype=REDACTED&comp=REDACTED&prefix=REDACTED&delimiter=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f1e3184c-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:03,049] {_universal.py:504} INFO - Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/xml'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e13f40e-301e-007a-3c1c-e3a247000000'
+    'x-ms-client-request-id': 'f1e3184c-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:02 GMT'
+[2022-10-18 18:09:03,057] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05468359.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f289c2fa-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:03,279] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '734'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:58 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB133211308BE"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e13f5ee-301e-007a-751c-e3a247000000'
+    'x-ms-client-request-id': 'f289c2fa-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:02 GMT'
+[2022-10-18 18:09:03,288] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:03,289] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:03,291] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05468359', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'Safety and Efficacy of Cyclophosphamide, Sorafenib, Bevacizumab, and Atezolizumab in Pediatric Solid Tumor Patients', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05468359?cond=Tecentriq&sfpd_d=100', 'publisher': "St. Jude Children's Research Hospital", 'published_at': '2022-07-21T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:04,801] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05468489.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f393bcdc-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:05,050] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '659'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:58 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB133214ED085"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e13fd92-301e-007a-3f1c-e3a247000000'
+    'x-ms-client-request-id': 'f393bcdc-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:04 GMT'
+[2022-10-18 18:09:05,061] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:05,062] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:05,065] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05468489', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'To Evaluate Efficacy and Safety of HLX10 + Chemotherapy (Carboplatin- Etoposide) in US Patients With ES-SCLC', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05468489?cond=Tecentriq&sfpd_d=100', 'publisher': 'Shanghai Henlius Biotech', 'published_at': '2022-07-21T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:05,322] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05470595.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f3e35a58-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:05,558] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '627'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:56 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB133204AF3E5"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e13ff95-301e-007a-241c-e3a247000000'
+    'x-ms-client-request-id': 'f3e35a58-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:04 GMT'
+[2022-10-18 18:09:05,581] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:05,583] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:05,591] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05470595', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'A Single-arm Trial of Atezolizumab/Platinum/Etoposide for the Treatment of Advanced Large-cell Neuroendocrine Cancer of the Lung', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05470595?cond=Tecentriq&sfpd_d=100', 'publisher': 'Technische Universität Dresden;   Roche Pharma AG', 'published_at': '2022-07-22T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:05,872] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05483400.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f437545a-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:06,086] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '587'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:55 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB1331F9D8F11"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e14012e-301e-007a-271c-e3a247000000'
+    'x-ms-client-request-id': 'f437545a-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:05 GMT'
+[2022-10-18 18:09:06,095] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:06,097] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:06,101] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05483400', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'Open Label Phase 2 Basket Trial With Atezolizumab and Tiragolumab in Solid Tumors', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05483400?cond=Tecentriq&sfpd_d=100', 'publisher': 'University Medical Center Groningen', 'published_at': '2022-08-02T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:06,358] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05487235.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f4817d82-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:06,582] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '669'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:57 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB13320BD2D12"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e1402cc-301e-007a-2c1c-e3a247000000'
+    'x-ms-client-request-id': 'f4817d82-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:06 GMT'
+[2022-10-18 18:09:06,593] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:06,595] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:06,598] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05487235', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'A Study to Evaluate the Safety, Pharmacokinetics, and Activity of GDC-1971 in Combination With Atezolizumab in Participants With Locally Advanced or Metastatic Solid Tumors', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05487235?cond=Tecentriq&sfpd_d=100', 'publisher': 'Genentech, Inc.', 'published_at': '2022-08-04T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:06,862] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05488522.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f4ce632c-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:07,078] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '533'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:58 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB13321302983"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e140441-301e-007a-7c1c-e3a247000000'
+    'x-ms-client-request-id': 'f4ce632c-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:06 GMT'
+[2022-10-18 18:09:07,085] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:07,086] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:07,089] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05488522', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'SBRT With Atezo/Bev for HCC', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05488522?cond=Tecentriq&sfpd_d=100', 'publisher': 'Abramson Cancer Center of the University of Pennsylvania', 'published_at': '2022-08-04T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:07,339] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05492123.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f5172efe-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:07,566] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '644'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:59 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB13321914E1D"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e1405d7-301e-007a-721c-e3a247000000'
+    'x-ms-client-request-id': 'f5172efe-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:07 GMT'
+[2022-10-18 18:09:07,585] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:07,588] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:07,593] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05492123', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'Nivolumab-ipilimumab and Chemoradiation for Cervical Cancer', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05492123?cond=Tecentriq&sfpd_d=100', 'publisher': 'Hospital Israelita Albert Einstein;   Bristol-Myers Squibb;   Brava', 'published_at': '2022-08-08T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:07,828] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05498896.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f561bda2-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:08,049] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '725'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:56 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB1331FD6BF39"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e140710-301e-007a-1d1c-e3a247000000'
+    'x-ms-client-request-id': 'f561bda2-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:07 GMT'
+[2022-10-18 18:09:08,057] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:08,060] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:08,063] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05498896', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'Investigate the Contribution of Ipatasertib to Neoadjuvant Chemotherapy Plus Atezolizumab in TNBC', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05498896?cond=Tecentriq&sfpd_d=100', 'publisher': 'Queen Mary University of London;   Westdeutsche Studiengruppe GmbH (WSG);   MedSIR;   Hoffmann-La Roche', 'published_at': '2022-08-12T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:08,305] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05510427.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f5aa7df8-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:08,527] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '703'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:57 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB13320A05A7C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e14094a-301e-007a-2c1c-e3a247000000'
+    'x-ms-client-request-id': 'f5aa7df8-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:07 GMT'
+[2022-10-18 18:09:08,537] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:08,538] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:08,542] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05510427', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'Phase Ib Trial of Infigratinib In Combination With Atezolizumab And Bevacizumab for The Second-Line Treatment of Advanced Cholangiocarcinoma With FGFR2 Fusion/Amplification', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05510427?cond=Tecentriq&sfpd_d=100', 'publisher': 'M.D. Anderson Cancer Center;   Helsinn Healthcare', 'published_at': '2022-08-22T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:08,811] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05515627.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f5f77694-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:09,052] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '525'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:56 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB1331FF31CB4"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e140bf3-301e-007a-1d1c-e3a247000000'
+    'x-ms-client-request-id': 'f5f77694-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:08 GMT'
+[2022-10-18 18:09:09,071] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:09,073] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:09,077] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05515627', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'Atezolizumab for Idiopathic Pulmonary Fibrosis', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05515627?cond=Tecentriq&sfpd_d=100', 'publisher': 'Cedars-Sinai Medical Center;   Genentech, Inc.', 'published_at': '2022-08-25T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:09,346] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05516628.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f6495464-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:09,577] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '1137'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:56 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB13320101657"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e140db4-301e-007a-3b1c-e3a247000000'
+    'x-ms-client-request-id': 'f6495464-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:09 GMT'
+[2022-10-18 18:09:09,587] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:09,589] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:09,594] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05516628', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'Deep, Multi-omics Phenotyping to Predict Response, Resistance and Recurrence to Adjuvant Atezolizumab Plus Bevacizumab in Resected Hepatocellular Carcinoma', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05516628?cond=Tecentriq&sfpd_d=100', 'publisher': 'National Cancer Centre, Singapore;   Singapore General Hospital;   National University Hospital, Singapore;   Changi General Hospital;   Sengkang General Hospital;   Tan Tock Seng Hospital;   Singapore Clinical Research Institute;   Genome Institute of Singapore;   Institute of Molecular and Cell Biology of Singapore;   Cancer Science Institute of Singapore;   Duke-NUS Graduate Medical School;   Singapore Phenome Centre;   Nanyang Technological University;   NMRC OF-LCG (OFLCG21Jun-0016)', 'published_at': '2022-08-25T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:09,852] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05528952.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f6969102-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:10,062] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '727'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:57 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB13320DA74C6"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e140f4b-301e-007a-031c-e3a247000000'
+    'x-ms-client-request-id': 'f6969102-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:09 GMT'
+[2022-10-18 18:09:10,067] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:10,068] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:10,070] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05528952', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'Evaluation of the Interest to Combine a CD4 Th1-inducer Cancer Vaccine Derived From Telomerase and Atezolizumab Plus Bevacizumab in Unresectable Hepatocellular Carcinoma', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05528952?cond=Tecentriq&sfpd_d=100', 'publisher': 'Centre Hospitalier Universitaire de Besancon;   GERCOR - Multidisciplinary Oncology Cooperative Group', 'published_at': '2022-09-06T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:10,354] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05537402.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f6e34448-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:10,587] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '686'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:58 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB13321708473"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e1410a6-301e-007a-461c-e3a247000000'
+    'x-ms-client-request-id': 'f6e34448-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:10 GMT'
+[2022-10-18 18:09:10,604] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:10,606] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:10,612] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05537402', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'LOcoregional vs Systemic Therapy in Patients With BCLC Stage B HCC (LOST- B) Trial', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05537402?cond=Tecentriq&sfpd_d=100', 'publisher': 'University of Texas Southwestern Medical Center;   Genentech, Inc.', 'published_at': '2022-09-13T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:10,873] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05538091.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f73222ca-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:11,135] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '709'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:56 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB133202D5E16"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e141205-301e-007a-081c-e3a247000000'
+    'x-ms-client-request-id': 'f73222ca-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:10 GMT'
+[2022-10-18 18:09:11,146] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:11,148] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:11,154] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05538091', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'Vismodegib Combined With Atezolizumab in Platinum Resistant Ovarian, Fallopian Tube, and Primary Peritoneal Cancer', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05538091?cond=Tecentriq&sfpd_d=100', 'publisher': 'Ronald Buckanovich;   Genentech, Inc.', 'published_at': '2022-09-13T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:11,428] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05542407.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f7872a54-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:11,660] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '594'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:56 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB1331FBA88C0"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e141370-301e-007a-481c-e3a247000000'
+    'x-ms-client-request-id': 'f7872a54-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:11 GMT'
+[2022-10-18 18:09:11,668] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:11,671] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:11,674] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05542407', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'ONC201 and Atezolizumab in Obesity-Driven Endometrial Cancer', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05542407?cond=Tecentriq&sfpd_d=100', 'publisher': 'UNC Lineberger Comprehensive Cancer Center;   Genentech, Inc.;   Oncoceutics, Inc.', 'published_at': '2022-09-15T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:11,943] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05546879.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f7d597b6-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:12,175] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '651'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:57 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB13320677872"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e1414d8-301e-007a-0d1c-e3a247000000'
+    'x-ms-client-request-id': 'f7d597b6-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:11 GMT'
+[2022-10-18 18:09:12,183] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:12,184] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:12,188] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05546879', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'Study Investigating the Association of NP137 With Atezolizumab-Bevacizumab Combination in First Line in Unresectable Hepatocellular Carcinoma', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05546879?cond=Tecentriq&sfpd_d=100', 'publisher': 'University Hospital, Grenoble;   NETRIS Pharma', 'published_at': '2022-09-21T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:12,434] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05549297.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f82094aa-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:12,664] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '602'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:59 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB13321AF8016"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e141649-301e-007a-6b1c-e3a247000000'
+    'x-ms-client-request-id': 'f82094aa-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:12 GMT'
+[2022-10-18 18:09:12,680] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:12,682] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:12,688] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05549297', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': "Tebentafusp Regimen Versus Investigator's Choice in Previously Treated Advanced Melanoma (TEBE-AM)", 'link': 'https://clinicaltrials.gov/ct2/show/NCT05549297?cond=Tecentriq&sfpd_d=100', 'publisher': 'Immunocore Ltd', 'published_at': '2022-09-22T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:12,995] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05564416.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f8762474-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:13,223] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '1026'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:57 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB1332083D5EB"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e14182b-301e-007a-341c-e3a247000000'
+    'x-ms-client-request-id': 'f8762474-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:12 GMT'
+[2022-10-18 18:09:13,230] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:13,231] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:13,234] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05564416', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'Testing Anti-Cancer Drugs Erdafitinib With or Without Atezolizumab in Patients With Localized Bladder Cancer Not Able to Receive Cisplatin Chemotherapy, NERA Trial', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05564416?cond=Tecentriq&sfpd_d=100', 'publisher': 'National Cancer Institute (NCI)', 'published_at': '2022-10-03T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:13,492] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/tecentriq/lung-cancer_clinical-trials_20221018_tecentriq_NCT05581004.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f8c2033a-4f0f-11ed-a26e-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 18:09:13,681] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '813'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:03:58 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB13320F68436"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0e141a37-301e-007a-231c-e3a247000000'
+    'x-ms-client-request-id': 'f8c2033a-4f0f-11ed-a26e-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:09:13 GMT'
+[2022-10-18 18:09:13,691] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 18:09:13,695] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 18:09:13,699] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05581004', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'Tecentriq', 'title': 'A Study to Evaluate the Safety, Pharmacokinetics, and Activity of RO7502175 as a Single Agent and in Combination With Atezolizumab in Participants With Locally Advanced or Metastatic Solid Tumors', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05581004?cond=Tecentriq&sfpd_d=100', 'publisher': 'Genentech, Inc.', 'published_at': '2022-10-14T12:00:00.000Z', 'updated_at': '2022-10-18T18:01:26.664Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 18:09:13,951] {python.py:173} INFO - Done. Returned value was: None
+[2022-10-18 18:09:13,966] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=clinical_trials__lung_cancer__etl__20220109, task_id=load_data_to_mongodb_task, map_index=63, execution_date=20221018T160000, start_date=20221018T180901, end_date=20221018T180913
+[2022-10-18 18:09:14,031] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-18 18:09:14,064] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

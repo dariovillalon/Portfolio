@@ -1,0 +1,514 @@
+[2022-10-18 20:06:52,708] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_mongodb_task scheduled__2022-10-18T18:00:00+00:00 map_index=4 [queued]>
+[2022-10-18 20:06:52,719] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_mongodb_task scheduled__2022-10-18T18:00:00+00:00 map_index=4 [queued]>
+[2022-10-18 20:06:52,721] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 20:06:52,722] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-10-18 20:06:52,723] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 20:06:52,731] {taskinstance.py:1377} INFO - Executing <Mapped(_PythonDecoratedOperator): load_data_to_mongodb_task> on 2022-10-18 18:00:00+00:00
+[2022-10-18 20:06:52,735] {standard_task_runner.py:52} INFO - Started process 5288 to run task
+[2022-10-18 20:06:52,739] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'clinical_trials__lung_cancer__etl__20220109', 'load_data_to_mongodb_task', 'scheduled__2022-10-18T18:00:00+00:00', '--job-id', '667', '--raw', '--subdir', 'DAGS_FOLDER/process_news_dags.py', '--cfg-path', '/tmp/tmp_3twbsfe', '--map-index', '4', '--error-file', '/tmp/tmpqoqjbtud']
+[2022-10-18 20:06:52,740] {standard_task_runner.py:80} INFO - Job 667: Subtask load_data_to_mongodb_task
+[2022-10-18 20:06:52,751] {logging_mixin.py:115} WARNING - /root/.cache/pypoetry/virtualenvs/***-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/configuration.py:525 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-10-18 20:06:52,778] {task_command.py:370} INFO - Running <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_mongodb_task scheduled__2022-10-18T18:00:00+00:00 map_index=4 [running]> on host 6cdf6d517dc4
+[2022-10-18 20:06:52,818] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=wais@datakimia.com,david@datakimia.com,juanm@datakimia.com,tomas@datakimia.com
+AIRFLOW_CTX_DAG_OWNER=atacana
+AIRFLOW_CTX_DAG_ID=clinical_trials__lung_cancer__etl__20220109
+AIRFLOW_CTX_TASK_ID=load_data_to_mongodb_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-18T18:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-18T18:00:00+00:00
+[2022-10-18 20:06:52,820] {process_news_dag_factory.py:128} INFO - Going to load data from clinical_trials about topic BMS
+[2022-10-18 20:06:52,840] {db_helpers.py:35} INFO - Connected successfully!!!
+[2022-10-18 20:06:52,845] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container?restype=REDACTED&comp=REDACTED&prefix=REDACTED&delimiter=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '6875bcd4-4f20-11ed-b886-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:53,748] {_universal.py:504} INFO - Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/xml'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '5c12d109-901e-0001-5c2d-e3e0db000000'
+    'x-ms-client-request-id': '6875bcd4-4f20-11ed-b886-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:53 GMT'
+[2022-10-18 20:06:53,753] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/bms/lung-cancer_clinical-trials_20221018_bms_NCT05478499.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '69007338-4f20-11ed-b886-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:53,937] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '551'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:03:04 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143C4667295"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '5c12d2c2-901e-0001-6d2d-e3e0db000000'
+    'x-ms-client-request-id': '69007338-4f20-11ed-b886-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:53 GMT'
+[2022-10-18 20:06:53,954] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:53,955] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:53,959] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05478499', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'BMS', 'title': 'Efficacy and Safety of Deucravacitinib Versus Placebo in Participants With Moderate-to-severe Scalp Psoriasis', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05478499?cond=BMS&sfpd_d=100', 'publisher': 'Bristol-Myers Squibb', 'published_at': '2022-07-28T12:00:00.000Z', 'updated_at': '2022-10-18T20:00:08.363Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:55,212] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/bms/lung-cancer_clinical-trials_20221018_bms_NCT05517837.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '69df13e0-4f20-11ed-b886-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:55,397] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '517'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:03:03 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143C3D4F626"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '5c12db62-901e-0001-562d-e3e0db000000'
+    'x-ms-client-request-id': '69df13e0-4f20-11ed-b886-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:55 GMT'
+[2022-10-18 20:06:55,427] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:55,429] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:55,433] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05517837', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'BMS', 'title': 'A Phase 1, First-in-Human Study of BMS-986421 in Healthy Participants', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05517837?cond=BMS&sfpd_d=100', 'publisher': 'Bristol-Myers Squibb', 'published_at': '2022-08-26T12:00:00.000Z', 'updated_at': '2022-10-18T20:00:08.363Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:55,648] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/bms/lung-cancer_clinical-trials_20221018_bms_NCT05543629.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '6a2171cc-4f20-11ed-b886-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:55,837] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '684'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:03:03 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143C3B76060"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '5c12de19-901e-0001-5d2d-e3e0db000000'
+    'x-ms-client-request-id': '6a2171cc-4f20-11ed-b886-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:55 GMT'
+[2022-10-18 20:06:55,845] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:55,846] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:55,849] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05543629', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'BMS', 'title': 'A Study of BMS-986442 With Nivolumab With or Without Chemotherapy in Solid Tumors and Non-small Cell Lung Cancer', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05543629?cond=BMS&sfpd_d=100', 'publisher': 'Bristol-Myers Squibb', 'published_at': '2022-09-16T12:00:00.000Z', 'updated_at': '2022-10-18T20:00:08.363Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:56,072] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/bms/lung-cancer_clinical-trials_20221018_bms_NCT05546151.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '6a624148-4f20-11ed-b886-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:56,254] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '566'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:03:02 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143C39A66B8"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '5c12e04f-901e-0001-672d-e3e0db000000'
+    'x-ms-client-request-id': '6a624148-4f20-11ed-b886-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:55 GMT'
+[2022-10-18 20:06:56,259] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:56,260] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:56,263] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05546151', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'BMS', 'title': 'A Study to Assess the Safety and Tolerability of BMS-986322 in Healthy Participants of Japanese Descent', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05546151?cond=BMS&sfpd_d=100', 'publisher': 'Bristol-Myers Squibb', 'published_at': '2022-09-19T12:00:00.000Z', 'updated_at': '2022-10-18T20:00:08.363Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:56,491] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/bms/lung-cancer_clinical-trials_20221018_bms_NCT05552976.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '6aa237ee-4f20-11ed-b886-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:56,676] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '694'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:03:03 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143C42BBC15"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '5c12e2fd-901e-0001-672d-e3e0db000000'
+    'x-ms-client-request-id': '6aa237ee-4f20-11ed-b886-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:56 GMT'
+[2022-10-18 20:06:56,681] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:56,682] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:56,684] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05552976', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'BMS', 'title': 'A Study to Evaluate CC-92480 in Combination With Carfilzomib and Dexamethasone (480Kd) Versus Carfilzomib and Dexamethasone (Kd) in Participants With Relapsed or Refractory Multiple Myeloma (SUCCESSOR-2)', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05552976?cond=BMS&sfpd_d=100', 'publisher': 'Bristol-Myers Squibb', 'published_at': '2022-09-23T12:00:00.000Z', 'updated_at': '2022-10-18T20:00:08.363Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:56,898] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/bms/lung-cancer_clinical-trials_20221018_bms_NCT05556265.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '6ae04f20-4f20-11ed-b886-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:57,086] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '543'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:03:03 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143C40E9B6A"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '5c12e53c-901e-0001-802d-e3e0db000000'
+    'x-ms-client-request-id': '6ae04f20-4f20-11ed-b886-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:56 GMT'
+[2022-10-18 20:06:57,091] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:57,093] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:57,096] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05556265', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'BMS', 'title': 'A Study to Evaluate Efficacy and Safety of Deucravacitinib in Participants With Alopecia Areata', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05556265?cond=BMS&sfpd_d=100', 'publisher': 'Bristol-Myers Squibb', 'published_at': '2022-09-27T12:00:00.000Z', 'updated_at': '2022-10-18T20:00:08.363Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:57,308] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/bms/lung-cancer_clinical-trials_20221018_bms_NCT05556343.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '6b1ed920-4f20-11ed-b886-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:57,495] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '577'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:03:04 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143C44903CE"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '5c12e7a7-901e-0001-3d2d-e3e0db000000'
+    'x-ms-client-request-id': '6b1ed920-4f20-11ed-b886-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:57 GMT'
+[2022-10-18 20:06:57,502] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:57,503] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:57,506] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05556343', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'BMS', 'title': 'A Study to Evaluate the Efficacy, Safety, and Tolerability of MYK-224 in Participants With Symptomatic Obstructive Hypertrophic Cardiomyopathy', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05556343?cond=BMS&sfpd_d=100', 'publisher': 'Bristol-Myers Squibb', 'published_at': '2022-09-27T12:00:00.000Z', 'updated_at': '2022-10-18T20:00:08.363Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:57,731] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/bms/lung-cancer_clinical-trials_20221018_bms_NCT05567510.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '6b5f6170-4f20-11ed-b886-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:57,916] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '521'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:03:02 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143C37D4601"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '5c12e9c0-901e-0001-372d-e3e0db000000'
+    'x-ms-client-request-id': '6b5f6170-4f20-11ed-b886-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:57 GMT'
+[2022-10-18 20:06:57,921] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:57,922] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:57,924] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05567510', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'BMS', 'title': 'A Study to Evaluate the Metabolism and Excretion of BMS-986369 in Healthy Male Participants', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05567510?cond=BMS&sfpd_d=100', 'publisher': 'Bristol-Myers Squibb', 'published_at': '2022-10-05T12:00:00.000Z', 'updated_at': '2022-10-18T20:00:08.363Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:58,139] {_universal.py:476} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/bms/lung-cancer_clinical-trials_20221018_bms_NCT05579574.json'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '6b9db128-4f20-11ed-b886-0242bebc0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2022-10-18 20:06:58,326] {_universal.py:504} INFO - Response status: 206
+Response headers:
+    'Content-Length': '620'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 20:03:03 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DAB143C3F17AB8"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '5c12ec1e-901e-0001-762d-e3e0db000000'
+    'x-ms-client-request-id': '6b9db128-4f20-11ed-b886-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 20:06:57 GMT'
+[2022-10-18 20:06:58,335] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1 entries, 0 to 0
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   title             1 non-null      object
+ 1   link              1 non-null      object
+ 2   id                1 non-null      object
+ 3   published_at      1 non-null      object
+ 4   conditions        1 non-null      object
+ 5   intervention      1 non-null      object
+ 6   publisher         1 non-null      object
+ 7   status            1 non-null      object
+ 8   source            1 non-null      object
+ 9   keyword           1 non-null      object
+ 10  indication        1 non-null      object
+ 11  therapeutic_area  1 non-null      object
+ 12  updated_at        1 non-null      object
+dtypes: object(13)
+memory usage: 232.0+ bytes
+[2022-10-18 20:06:58,336] {process_news_dag_factory.py:159} INFO - None
+[2022-10-18 20:06:58,340] {process_news_dag_factory.py:167} INFO - {'id': 'NCT05579574', 'source': 'clinical_trials', 'therapeutic_area': 'Oncology', 'indication': 'Lung Cancer', 'keyword': 'BMS', 'title': 'A Study to Investigate the Interaction of BMS-986322 and a Combined Oral Hormonal Contraceptive (Ethinyl Estradiol [EE]/Norethindrone [NET]) in Healthy Female Participants', 'link': 'https://clinicaltrials.gov/ct2/show/NCT05579574?cond=BMS&sfpd_d=100', 'publisher': 'Bristol-Myers Squibb', 'published_at': '2022-10-14T12:00:00.000Z', 'updated_at': '2022-10-18T20:00:08.363Z', 'atacana_team': None, 'category': None, 'priority': None, 'content': None}
+[2022-10-18 20:06:58,547] {python.py:173} INFO - Done. Returned value was: None
+[2022-10-18 20:06:58,571] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=clinical_trials__lung_cancer__etl__20220109, task_id=load_data_to_mongodb_task, map_index=4, execution_date=20221018T180000, start_date=20221018T200652, end_date=20221018T200658
+[2022-10-18 20:06:58,649] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-18 20:06:58,683] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

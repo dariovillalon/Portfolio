@@ -1,0 +1,637 @@
+[2022-10-18 18:01:55,588] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_blob_storage_task scheduled__2022-10-18T16:00:00+00:00 map_index=17 [queued]>
+[2022-10-18 18:01:55,597] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_blob_storage_task scheduled__2022-10-18T16:00:00+00:00 map_index=17 [queued]>
+[2022-10-18 18:01:55,598] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 18:01:55,599] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-10-18 18:01:55,600] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 18:01:55,607] {taskinstance.py:1377} INFO - Executing <Mapped(_PythonDecoratedOperator): load_data_to_blob_storage_task> on 2022-10-18 16:00:00+00:00
+[2022-10-18 18:01:55,611] {standard_task_runner.py:52} INFO - Started process 2705 to run task
+[2022-10-18 18:01:55,614] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'clinical_trials__lung_cancer__etl__20220109', 'load_data_to_blob_storage_task', 'scheduled__2022-10-18T16:00:00+00:00', '--job-id', '340', '--raw', '--subdir', 'DAGS_FOLDER/process_news_dags.py', '--cfg-path', '/tmp/tmpopfnwwpn', '--map-index', '17', '--error-file', '/tmp/tmpw5jwsfk0']
+[2022-10-18 18:01:55,615] {standard_task_runner.py:80} INFO - Job 340: Subtask load_data_to_blob_storage_task
+[2022-10-18 18:01:55,626] {logging_mixin.py:115} WARNING - /root/.cache/pypoetry/virtualenvs/***-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/configuration.py:525 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-10-18 18:01:55,653] {task_command.py:370} INFO - Running <TaskInstance: clinical_trials__lung_cancer__etl__20220109.load_data_to_blob_storage_task scheduled__2022-10-18T16:00:00+00:00 map_index=17 [running]> on host 6cdf6d517dc4
+[2022-10-18 18:01:55,692] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=wais@datakimia.com,david@datakimia.com,juanm@datakimia.com,tomas@datakimia.com
+AIRFLOW_CTX_DAG_OWNER=atacana
+AIRFLOW_CTX_DAG_ID=clinical_trials__lung_cancer__etl__20220109
+AIRFLOW_CTX_TASK_ID=load_data_to_blob_storage_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-18T16:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-18T16:00:00+00:00
+[2022-10-18 18:01:55,694] {process_news_dag_factory.py:105} INFO - Reading temp file: lung-cancer_clinical-trials_mdx-1106_20221018-16_df.json
+[2022-10-18 18:01:55,708] {helpers.py:114} INFO - Going to save clinical_trials data..
+[2022-10-18 18:01:55,709] {helpers.py:115} INFO -                                                title  ...                  updated_at
+0  CARG, VES13, G8 Scales in Predicting Drug Toxi...  ...  2022-10-18 18:00:31.828000
+1  Nivolumab During Active Surveillance After Neo...  ...  2022-10-18 18:00:31.828000
+2  Phase Ib/II Study to Evaluate the Safety and E...  ...  2022-10-18 18:00:31.828000
+3  Study of Relatlimab in Combination With Nivolu...  ...  2022-10-18 18:00:31.828000
+4  A Study of BMS-986442 With Nivolumab With or W...  ...  2022-10-18 18:00:31.828000
+
+[5 rows x 13 columns]
+[2022-10-18 18:01:55,717] {helpers.py:116} INFO - Index(['title', 'link', 'id', 'published_at', 'conditions', 'intervention',
+       'publisher', 'status', 'source', 'keyword', 'indication',
+       'therapeutic_area', 'updated_at'],
+      dtype='object')
+[2022-10-18 18:01:55,721] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05564923.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '536'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f3d3792c-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:56,552] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:56 GMT'
+    'ETag': '"0x8DAB132D8806EDD"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5eb623-a01e-0035-511b-e3d313000000'
+    'x-ms-client-request-id': 'f3d3792c-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:56 GMT'
+[2022-10-18 18:01:56,556] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05491616.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '535'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f452ee00-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:56,831] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:56 GMT'
+    'ETag': '"0x8DAB132D8AAFB1F"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5eb76a-a01e-0035-0a1b-e3d313000000'
+    'x-ms-client-request-id': 'f452ee00-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:56 GMT'
+[2022-10-18 18:01:56,836] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05535569.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '708'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f47daa46-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:57,022] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:56 GMT'
+    'ETag': '"0x8DAB132D8C842DB"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5eb8da-a01e-0035-731b-e3d313000000'
+    'x-ms-client-request-id': 'f47daa46-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:56 GMT'
+[2022-10-18 18:01:57,027] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05498480.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '545'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f49ac5fe-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:57,221] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:57 GMT'
+    'ETag': '"0x8DAB132D8E64DC4"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5eba1b-a01e-0035-1d1b-e3d313000000'
+    'x-ms-client-request-id': 'f49ac5fe-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:57 GMT'
+[2022-10-18 18:01:57,224] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05543629.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '694'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f4b8d0f8-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:57,412] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:57 GMT'
+    'ETag': '"0x8DAB132D903E3A5"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ebb83-a01e-0035-6d1b-e3d313000000'
+    'x-ms-client-request-id': 'f4b8d0f8-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:57 GMT'
+[2022-10-18 18:01:57,415] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05482451.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '542'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f4d5e59e-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:57,636] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:57 GMT'
+    'ETag': '"0x8DAB132D925E59D"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ebcaa-a01e-0035-041b-e3d313000000'
+    'x-ms-client-request-id': 'f4d5e59e-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:57 GMT'
+[2022-10-18 18:01:57,638] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05472623.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '680'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f4f80278-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:57,827] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:57 GMT'
+    'ETag': '"0x8DAB132D9432D59"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ebe3d-a01e-0035-711b-e3d313000000'
+    'x-ms-client-request-id': 'f4f80278-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:57 GMT'
+[2022-10-18 18:01:57,830] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05492123.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '642'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f515495a-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:58,020] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:57 GMT'
+    'ETag': '"0x8DAB132D95FB1E1"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ebf68-a01e-0035-0e1b-e3d313000000'
+    'x-ms-client-request-id': 'f515495a-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:57 GMT'
+[2022-10-18 18:01:58,022] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05496192.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '584'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f5328c0e-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:58,202] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:58 GMT'
+    'ETag': '"0x8DAB132D97CD291"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ec0a0-a01e-0035-321b-e3d313000000'
+    'x-ms-client-request-id': 'f5328c0e-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:58 GMT'
+[2022-10-18 18:01:58,206] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05465174.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '650'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f54ea772-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:58,393] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:58 GMT'
+    'ETag': '"0x8DAB132D9993012"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ec1ce-a01e-0035-501b-e3d313000000'
+    'x-ms-client-request-id': 'f54ea772-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:58 GMT'
+[2022-10-18 18:01:58,403] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05472506.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '701'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f56cc1da-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:58,604] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:58 GMT'
+    'ETag': '"0x8DAB132D9B93684"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ec310-a01e-0035-771b-e3d313000000'
+    'x-ms-client-request-id': 'f56cc1da-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:58 GMT'
+[2022-10-18 18:01:58,618] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05504642.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '805'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f58d7a4c-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:58,816] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:58 GMT'
+    'ETag': '"0x8DAB132D9D8A0D2"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ec48c-a01e-0035-5c1b-e3d313000000'
+    'x-ms-client-request-id': 'f58d7a4c-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:58 GMT'
+[2022-10-18 18:01:58,822] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05502315.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '614'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f5aca070-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:59,015] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:58 GMT'
+    'ETag': '"0x8DAB132D9F747E6"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ec5fe-a01e-0035-3e1b-e3d313000000'
+    'x-ms-client-request-id': 'f5aca070-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:58 GMT'
+[2022-10-18 18:01:59,027] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05533983.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '578'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f5cbf6be-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:59,235] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:59 GMT'
+    'ETag': '"0x8DAB132DA1A8236"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ec76a-a01e-0035-1a1b-e3d313000000'
+    'x-ms-client-request-id': 'f5cbf6be-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:59 GMT'
+[2022-10-18 18:01:59,237] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05468294.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '560'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f5ebfe00-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:59,422] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:59 GMT'
+    'ETag': '"0x8DAB132DA36B8AF"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ec8b0-a01e-0035-521b-e3d313000000'
+    'x-ms-client-request-id': 'f5ebfe00-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:59 GMT'
+[2022-10-18 18:01:59,425] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05501054.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '629'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f6089e8e-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:59,609] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:59 GMT'
+    'ETag': '"0x8DAB132DA53162D"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5eca19-a01e-0035-251b-e3d313000000'
+    'x-ms-client-request-id': 'f6089e8e-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:59 GMT'
+[2022-10-18 18:01:59,614] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05500092.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '753'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f62571da-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:01:59,813] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:59 GMT'
+    'ETag': '"0x8DAB132DA6FE8CA"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ecb65-a01e-0035-641b-e3d313000000'
+    'x-ms-client-request-id': 'f62571da-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:59 GMT'
+[2022-10-18 18:01:59,815] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05498792.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '590'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f64441e6-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:02:00,002] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:01:59 GMT'
+    'ETag': '"0x8DAB132DA8F0501"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5eccc9-a01e-0035-301b-e3d313000000'
+    'x-ms-client-request-id': 'f64441e6-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:01:59 GMT'
+[2022-10-18 18:02:00,005] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05457959.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '841'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f6612630-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:02:00,193] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:02:00 GMT'
+    'ETag': '"0x8DAB132DAAC25B1"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ece2a-a01e-0035-7d1b-e3d313000000'
+    'x-ms-client-request-id': 'f6612630-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:02:00 GMT'
+[2022-10-18 18:02:00,197] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05480384.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '780'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f67e71a4-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:02:00,380] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:02:00 GMT'
+    'ETag': '"0x8DAB132DAC8AA45"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ecf53-a01e-0035-141b-e3d313000000'
+    'x-ms-client-request-id': 'f67e71a4-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:02:00 GMT'
+[2022-10-18 18:02:00,383] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05568095.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '862'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f69ad88a-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:02:00,571] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:02:00 GMT'
+    'ETag': '"0x8DAB132DAE5A3E0"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ed059-a01e-0035-0e1b-e3d313000000'
+    'x-ms-client-request-id': 'f69ad88a-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:02:00 GMT'
+[2022-10-18 18:02:00,573] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05504252.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '673'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f6b7e5c4-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:02:00,798] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:02:00 GMT'
+    'ETag': '"0x8DAB132DB07CCEA"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ed16a-a01e-0035-161b-e3d313000000'
+    'x-ms-client-request-id': 'f6b7e5c4-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:02:00 GMT'
+[2022-10-18 18:02:00,801] {_universal.py:473} INFO - Request URL: 'https://atacananews.blob.core.windows.net/atacana-blob-container/lung-cancer/clinical-trials/20221018/mdx-1106/lung-cancer_clinical-trials_20221018_mdx-1106_NCT05583188.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '699'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.13.1 Python/3.8.15 (Linux-5.10.124-linuxkit-aarch64-with-glibc2.17)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f6daa618-4f0e-11ed-93da-0242bebc0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2022-10-18 18:02:00,985] {_universal.py:504} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Tue, 18 Oct 2022 18:02:00 GMT'
+    'ETag': '"0x8DAB132DB2589C6"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4f5ed2ba-a01e-0035-531b-e3d313000000'
+    'x-ms-client-request-id': 'f6daa618-4f0e-11ed-93da-0242bebc0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Tue, 18 Oct 2022 18:02:00 GMT'
+[2022-10-18 18:02:00,988] {python.py:173} INFO - Done. Returned value was: None
+[2022-10-18 18:02:00,997] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=clinical_trials__lung_cancer__etl__20220109, task_id=load_data_to_blob_storage_task, map_index=17, execution_date=20221018T160000, start_date=20221018T180155, end_date=20221018T180200
+[2022-10-18 18:02:01,054] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-18 18:02:01,090] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

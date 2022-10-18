@@ -1,0 +1,49 @@
+[2022-10-18 22:00:45,098] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: clinical_trials__lung_cancer__etl__20220109.get_data_task scheduled__2022-10-18T20:00:00+00:00 map_index=35 [queued]>
+[2022-10-18 22:00:45,105] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: clinical_trials__lung_cancer__etl__20220109.get_data_task scheduled__2022-10-18T20:00:00+00:00 map_index=35 [queued]>
+[2022-10-18 22:00:45,106] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 22:00:45,107] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-10-18 22:00:45,108] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 22:00:45,116] {taskinstance.py:1377} INFO - Executing <Mapped(_PythonDecoratedOperator): get_data_task> on 2022-10-18 20:00:00+00:00
+[2022-10-18 22:00:45,121] {standard_task_runner.py:52} INFO - Started process 6636 to run task
+[2022-10-18 22:00:45,124] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'clinical_trials__lung_cancer__etl__20220109', 'get_data_task', 'scheduled__2022-10-18T20:00:00+00:00', '--job-id', '779', '--raw', '--subdir', 'DAGS_FOLDER/process_news_dags.py', '--cfg-path', '/tmp/tmpxm5ki1mp', '--map-index', '35', '--error-file', '/tmp/tmp7v2p_wt4']
+[2022-10-18 22:00:45,125] {standard_task_runner.py:80} INFO - Job 779: Subtask get_data_task
+[2022-10-18 22:00:45,138] {logging_mixin.py:115} WARNING - /root/.cache/pypoetry/virtualenvs/***-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/configuration.py:525 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-10-18 22:00:45,166] {task_command.py:370} INFO - Running <TaskInstance: clinical_trials__lung_cancer__etl__20220109.get_data_task scheduled__2022-10-18T20:00:00+00:00 map_index=35 [running]> on host 6cdf6d517dc4
+[2022-10-18 22:00:45,208] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=wais@datakimia.com,david@datakimia.com,juanm@datakimia.com,tomas@datakimia.com
+AIRFLOW_CTX_DAG_OWNER=atacana
+AIRFLOW_CTX_DAG_ID=clinical_trials__lung_cancer__etl__20220109
+AIRFLOW_CTX_TASK_ID=get_data_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-18T20:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-18T20:00:00+00:00
+[2022-10-18 22:00:45,210] {process_news_dag_factory.py:57} INFO - Extracting data for indication: Lung Cancer, source: clinical_trials, TA: Oncology, keyword: MPDL-3280A 
+[2022-10-18 22:00:45,211] {extract.py:30} INFO - Going to extract clinicaltrials data about keyword MPDL-3280A
+[2022-10-18 22:00:46,245] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 19 entries, 0 to 18
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype         
+---  ------            --------------  -----         
+ 0   title             19 non-null     object        
+ 1   link              19 non-null     object        
+ 2   id                19 non-null     object        
+ 3   published_at      19 non-null     object        
+ 4   conditions        19 non-null     object        
+ 5   intervention      19 non-null     object        
+ 6   publisher         19 non-null     object        
+ 7   status            19 non-null     object        
+ 8   source            19 non-null     object        
+ 9   keyword           19 non-null     object        
+ 10  indication        19 non-null     object        
+ 11  therapeutic_area  19 non-null     object        
+ 12  updated_at        19 non-null     datetime64[ns]
+dtypes: datetime64[ns](1), object(12)
+memory usage: 2.1+ KB
+[2022-10-18 22:00:46,246] {process_news_dag_factory.py:80} INFO - None
+[2022-10-18 22:00:46,247] {process_news_dag_factory.py:81} INFO - Writing temp file lung-cancer_clinical-trials_mpdl-3280a_20221018-20_df.json
+[2022-10-18 22:00:46,258] {python.py:173} INFO - Done. Returned value was: None
+[2022-10-18 22:00:46,290] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=clinical_trials__lung_cancer__etl__20220109, task_id=get_data_task, map_index=35, execution_date=20221018T200000, start_date=20221018T220045, end_date=20221018T220046
+[2022-10-18 22:00:46,313] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-18 22:00:46,362] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

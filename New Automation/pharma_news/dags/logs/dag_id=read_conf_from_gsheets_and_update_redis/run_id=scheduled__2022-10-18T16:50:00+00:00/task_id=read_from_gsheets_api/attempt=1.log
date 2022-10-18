@@ -1,0 +1,190 @@
+[2022-10-18 16:55:04,976] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: read_conf_from_gsheets_and_update_redis.read_from_gsheets_api scheduled__2022-10-18T16:50:00+00:00 [queued]>
+[2022-10-18 16:55:04,989] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: read_conf_from_gsheets_and_update_redis.read_from_gsheets_api scheduled__2022-10-18T16:50:00+00:00 [queued]>
+[2022-10-18 16:55:04,991] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 16:55:04,994] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-10-18 16:55:04,995] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-18 16:55:05,154] {taskinstance.py:1377} INFO - Executing <Task(_PythonDecoratedOperator): read_from_gsheets_api> on 2022-10-18 16:50:00+00:00
+[2022-10-18 16:55:05,160] {standard_task_runner.py:52} INFO - Started process 1851 to run task
+[2022-10-18 16:55:05,164] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'read_conf_from_gsheets_and_update_redis', 'read_from_gsheets_api', 'scheduled__2022-10-18T16:50:00+00:00', '--job-id', '229', '--raw', '--subdir', 'DAGS_FOLDER/read_conf_from_gsheets_api_and_update_redis.py', '--cfg-path', '/tmp/tmpzgadpqon', '--error-file', '/tmp/tmp4xcap2sj']
+[2022-10-18 16:55:05,168] {standard_task_runner.py:80} INFO - Job 229: Subtask read_from_gsheets_api
+[2022-10-18 16:55:05,193] {logging_mixin.py:115} WARNING - /root/.cache/pypoetry/virtualenvs/***-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/configuration.py:525 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2022-10-18 16:55:05,245] {task_command.py:370} INFO - Running <TaskInstance: read_conf_from_gsheets_and_update_redis.read_from_gsheets_api scheduled__2022-10-18T16:50:00+00:00 [running]> on host 6cdf6d517dc4
+[2022-10-18 16:55:05,316] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=wais@datakimia.com,david@datakimia.com,juanm@datakimia.com,tomas@datakimia.com
+AIRFLOW_CTX_DAG_OWNER=atacana
+AIRFLOW_CTX_DAG_ID=read_conf_from_gsheets_and_update_redis
+AIRFLOW_CTX_TASK_ID=read_from_gsheets_api
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-18T16:50:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-18T16:50:00+00:00
+[2022-10-18 16:55:05,391] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2022-10-18 16:55:05,398] {helpers.py:200} INFO - Going to read from Gsheets API: sheet_id: 1G_dxkjADV4-W0s1GZjXmwPafU-wNRsWnvt5zRDs9FPU range: indication_keywords
+[2022-10-18 16:55:06,183] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/decorators/base.py", line 179, in execute
+    return_value = super().execute(context)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/etc/airflow/dags/read_conf_from_gsheets_api_and_update_redis.py", line 28, in read_from_gsheets_api
+    return get_indication_keywords_conf()
+  File "/news-project/pharma_news/helpers.py", line 229, in get_indication_keywords_conf
+    conf_data = get_values_from_sheet_api(sheet_id, sheet_name)
+  File "/news-project/pharma_news/helpers.py", line 201, in get_values_from_sheet_api
+    result = service.spreadsheets().values().get(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/googleapiclient/http.py", line 923, in execute
+    resp, content = _retry_request(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/googleapiclient/http.py", line 222, in _retry_request
+    raise exception
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/googleapiclient/http.py", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/google_auth_httplib2.py", line 209, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/google/auth/credentials.py", line 133, in before_request
+    self.refresh(request)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/google/oauth2/service_account.py", line 410, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/google/oauth2/_client.py", line 217, in jwt_grant
+    response_data = _token_endpoint_request(request, token_uri, body)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/google/oauth2/_client.py", line 185, in _token_endpoint_request
+    response_status_ok, response_data = _token_endpoint_request_no_throw(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/google/oauth2/_client.py", line 124, in _token_endpoint_request_no_throw
+    response = request(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/google_auth_httplib2.py", line 119, in __call__
+    response, data = self.http.request(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/httplib2/__init__.py", line 1701, in request
+    (response, content) = self._request(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/httplib2/__init__.py", line 1421, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/httplib2/__init__.py", line 1343, in _conn_request
+    conn.connect()
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/httplib2/__init__.py", line 1135, in connect
+    self.sock = self._context.wrap_socket(sock, server_hostname=self.host)
+  File "/usr/local/lib/python3.8/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/lib/python3.8/ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.8/ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:1131)
+[2022-10-18 16:55:06,201] {taskinstance.py:1395} INFO - Marking task as FAILED. dag_id=read_conf_from_gsheets_and_update_redis, task_id=read_from_gsheets_api, execution_date=20221018T165000, start_date=20221018T165504, end_date=20221018T165506
+[2022-10-18 16:55:06,225] {logging_mixin.py:115} WARNING - /root/.cache/pypoetry/virtualenvs/***-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/utils/email.py:119 PendingDeprecationWarning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2022-10-18 16:55:06,232] {email.py:228} INFO - Email alerting: attempt 1
+[2022-10-18 16:55:06,585] {email.py:228} INFO - Email alerting: attempt 1
+[2022-10-18 16:55:06,593] {taskinstance.py:1944} ERROR - Failed to send email to: ['wais@datakimia.com', 'david@datakimia.com', 'juanm@datakimia.com', 'tomas@datakimia.com']
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1451, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1598, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1659, in _execute_task
+    result = execute_callable(context=context)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/decorators/base.py", line 179, in execute
+    return_value = super().execute(context)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/etc/airflow/dags/read_conf_from_gsheets_api_and_update_redis.py", line 28, in read_from_gsheets_api
+    return get_indication_keywords_conf()
+  File "/news-project/pharma_news/helpers.py", line 229, in get_indication_keywords_conf
+    conf_data = get_values_from_sheet_api(sheet_id, sheet_name)
+  File "/news-project/pharma_news/helpers.py", line 201, in get_values_from_sheet_api
+    result = service.spreadsheets().values().get(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/googleapiclient/http.py", line 923, in execute
+    resp, content = _retry_request(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/googleapiclient/http.py", line 222, in _retry_request
+    raise exception
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/googleapiclient/http.py", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/google_auth_httplib2.py", line 209, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/google/auth/credentials.py", line 133, in before_request
+    self.refresh(request)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/google/oauth2/service_account.py", line 410, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/google/oauth2/_client.py", line 217, in jwt_grant
+    response_data = _token_endpoint_request(request, token_uri, body)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/google/oauth2/_client.py", line 185, in _token_endpoint_request
+    response_status_ok, response_data = _token_endpoint_request_no_throw(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/google/oauth2/_client.py", line 124, in _token_endpoint_request_no_throw
+    response = request(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/google_auth_httplib2.py", line 119, in __call__
+    response, data = self.http.request(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/httplib2/__init__.py", line 1701, in request
+    (response, content) = self._request(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/httplib2/__init__.py", line 1421, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/httplib2/__init__.py", line 1343, in _conn_request
+    conn.connect()
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/httplib2/__init__.py", line 1135, in connect
+    self.sock = self._context.wrap_socket(sock, server_hostname=self.host)
+  File "/usr/local/lib/python3.8/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/lib/python3.8/ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.8/ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:1131)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2326, in email_alert
+    send_email(task.email, subject, html_content)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/utils/email.py", line 58, in send_email
+    return backend(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/utils/email.py", line 119, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/utils/email.py", line 230, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/utils/email.py", line 264, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.8/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.8/smtplib.py", line 339, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.8/smtplib.py", line 310, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.8/socket.py", line 787, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/local/lib/python3.8/socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1942, in handle_failure
+    self.email_alert(error, task)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2328, in email_alert
+    send_email(task.email, subject, html_content_err)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/utils/email.py", line 58, in send_email
+    return backend(
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/utils/email.py", line 119, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/utils/email.py", line 230, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/root/.cache/pypoetry/virtualenvs/pharma-news-tXitOD5F-py3.8/lib/python3.8/site-packages/airflow/utils/email.py", line 264, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.8/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.8/smtplib.py", line 339, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.8/smtplib.py", line 310, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.8/socket.py", line 787, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/local/lib/python3.8/socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+[2022-10-18 16:55:06,621] {standard_task_runner.py:92} ERROR - Failed to execute job 229 for task read_from_gsheets_api (EOF occurred in violation of protocol (_ssl.c:1131); 1851)
+[2022-10-18 16:55:06,671] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-10-18 16:55:06,709] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
