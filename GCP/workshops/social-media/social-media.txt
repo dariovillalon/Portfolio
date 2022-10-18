@@ -1,0 +1,14 @@
+Process BigQuery Data with PySpark
+bit.ly/pyspark-bigquery
+
+Use the spark-nlp library for Natural Language Processing  
+bit.ly/spark-nlp
+
+Use Google Cloud AutoML and Natural Language APIs to process Social Media data
+bit.ly/social-media-nlp
+
+Video discussing AutoML
+https://www.youtube.com/watch?reload=9&v=XrMtF_inTZ0
+
+The slides are here also:
+https://github.com/bradmiro/cloud-dataproc/tree/master/workshops/social-media/slides.pdf
