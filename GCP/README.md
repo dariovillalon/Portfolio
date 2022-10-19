@@ -1,6 +1,6 @@
 # Google Cloud Dataproc
 
-This repository contains code and documentation for use with
+This folder contains code and documentation for use with
 [Google Cloud Dataproc](https://cloud.google.com/dataproc/).
 
 ## Samples in this Repository
